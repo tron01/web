@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        width: 60vw;
+      
+        background-color: rgb(230, 87, 87);
+        color: aliceblue;
+        text-transform: uppercase;
+        border-radius: 9px;
+    }
+    form{
+        padding: 45px;
+        
+    }
+    input{
+        padding: 10px;
+       margin: 10px;
+        border: none;
+        outline: none;
+    }
+    input[type="radio"]{
+margin: 5px;
+    }
+    #sub{
+color: antiquewhite;
+width: 80px;
+height: 50px;
+background-color: rgb(255, 115, 0);
+border-radius: 9px 9px;
+border: none;
+    }
+    
+</style>
+<body>
+    
+   <div class="main">
+    <form>
+        <label for="rollno">Roll NO   </label>
+        <input type="text" id="rollno"><br>
+       <label for="fname">First name</label>
+       <input type="text" id="fnmae"><br>
+       <label for="lname">Last name</label>
+       <input type="text" id="lname"><br>
+       
+<br>
+       <div class="sradio">
+        <label for="sbox">Which subject do yo like most</label><br><br>
+        <input type="radio" name="radio" value="cs"  id="cs" >
+        <label for="cs">CS</label><br>  
+        <input type="radio"name="radio" id="maths"  value="maths">
+        <label for="maths">maths</label><br>
+        <input type="radio"name="radio" id="c"  value="c">
+        <label for="c">c programing</label><br>
+      </div>
+      
+       
+       <br>
+
+       <input type="submit" value="Submit" id="sub">
+    </form>
+   </div>
+</body>
+</html>
