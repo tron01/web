@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    color: #fff;
+}
+body{
+    background-color: #000;
+
+}
+div{
+    border: 1px;
+    border-color:red ;
+    width:50%;
+    height: 50%;
+    margin-left: 20vw;
+   
+}
+.text1{
+    font-size: xx-large;
+    text-align: center;
+   
+   
+}
+#text2{
+    color: red;
+    font-size: xx-large;
+}
