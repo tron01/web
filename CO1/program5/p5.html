@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h3 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        height: 100%;
+
+    }
+    .upper{
+      text-transform: uppercase;  
+    }
+    .up2{
+        text-transform: uppercase; 
+        font-weight: bolder;
+    }
+</style>
+
+<body>
+    <h3> Student registration form </h3>
+    <table border="1px">
+        <tr>
+            <td class="upper">first name </td>
+            <td> <input type="text" name="first_name" id=""></td>
+        </tr>
+        <tr>
+            <td class="upper">last name </td>
+            <td> <input type="text" name="last_name" id=""></td>
+        </tr>
+        <tr>
+            <td class="upper"> Date of Birth </td>
+            <td> <input type="date" name="date" id=""></td>
+        </tr>
+        <tr>
+            <td class="upper"> Email id </td>
+            <td> <input type="email" name="email" id=""></td>
+        </tr>
+        <tr>
+            <td class="upper">Moblie number </td>
+            <td> <input type="number" name="mobile" id=""></td>
+        </tr>
+        <tr>
+            <td class="upper">Gender </td>
+            <td>
+                <input type="radio" name="gender" id="male" value="male"> <label for="male">Male</label>
+
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="others" value="others">
+                <label for="others">Others</label>
+            </td>
+
+        </tr>
+        <tr>
+            <td class="upper"> Address</td>
+            <td><textarea placeholder="Address here.."> </textarea></td>
+        </tr>
+        <tr>
+            <td class="upper"> city </td>
+            <td><input type="text"> </td>
+        </tr>
+        <tr>
+            <td class="upper"> pin code</td>
+            <td> <input type="number"></td>
+        </tr>
+        <tr>
+            <td class="upper"> State</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td class="upper"> Country</td>
+
+            <td> <input type="text"></td>
+        </tr>
+        <tr>
+            <td class="upper"> Hobbies </td>
+            <td><input type="checkbox" id="c1" name="singing" value="singing">
+                <label for="c1"> singing</label>
+                <input type="checkbox" id="c2" name="dancing" value="dancing">
+                <label for="c2"> dancing</label>
+                <input type="checkbox" id="c3" name="Drawing" value="Drawing">
+                <label for="c3">Drawing </label>
+                <input type="checkbox" id="c4" name="other" value="other">
+                <label for="c4"> others</label>
+                <input type="text" name="Hobbies" id="">
+            </td>
+        </tr>
+        <tr>
+             <td class="upper"> qualifaction </td>
+             <td> <table>  
+                 <tr> <td class="up2"> sl .no Examination</td>
+                    <td class="up2"> Borad</td>
+                     <td class="up2"> percentage</td>
+                      <td class="up2">year of passing </td>
+                 </tr>
+             </table></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
