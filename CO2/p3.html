@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+
+    A:<input type="text" id="num1">
+    <br><br>
+    B:<input type="text" id="num2">
+    <br><br>
+    C:<input type="text" id="num3">
+    <br><br>
+    <button onclick="Largest()">Largest</button>
+    
+    <br>
+    
+      <h1> Result: <span id="res" style="color: #000;"> </span></h1> 
+  
+
+
+
+    <script>
+        var a,b ,c;
+        document.getElementById("res").innerHTML = " "
+
+        function Largest() {
+            a = parseInt(document.getElementById("num1").value);
+            b= parseInt(document.getElementById("num2").value);
+            c= parseInt(document.getElementById("num3").value);
+           
+            if(a>b && a>c){
+                document.getElementById("res").innerHTML = a
+
+            }else if(b>c){
+                document.getElementById("res").innerHTML =b
+
+            }else{
+                document.getElementById("res").innerHTML = c
+
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

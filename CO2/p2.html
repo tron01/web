@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+
+    Num1:<input type="text" id="num1">
+    <br><br>
+    Num2:<input type="text" id="num2">
+    <br><br>
+    <button onclick="Add()">ADD</button>
+    <button onclick="sub()">SUB</button>
+    <button onclick="mul()">MULTI</button>
+    <br>
+    
+      <h1> Result: <span id="res" style="color: #000;"> </span></h1> 
+  
+
+
+
+    <script>
+        var num1, num2, res = 0;
+        document.getElementById("res").innerHTML = " "
+
+        function Add() {
+            num1 = parseInt(document.getElementById("num1").value);
+            num2 = parseInt(document.getElementById("num2").value);
+            res = (num1 + num2);
+            document.getElementById("res").innerHTML = res
+        }
+        function sub() {
+            num1 = parseInt(document.getElementById("num1").value);
+            num2 = parseInt(document.getElementById("num2").value);
+            res = (num1 - num2);
+            document.getElementById("res").innerHTML = res
+        }
+        function mul() {
+            num1 = parseInt(document.getElementById("num1").value);
+            num2 = parseInt(document.getElementById("num2").value);
+            res = (num1 * num2);
+            document.getElementById("res").innerHTML = res
+        }
+
+
+    </script>
+</body>
+
+</html>
