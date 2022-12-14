@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p6 mark</title>
+</head>
+<body>
+    
+
+    <script>
+         var mark = parseInt(prompt("Enter the mark")) ;
+         switch (true) {
+            case mark >= 90 && mark <=100: document.write("<h1 style=' color: red;'> First class </h1>")
+            break;
+            case mark >= 70 && mark <=100 : document.write("<h1 style=' color: red;'> second class </h1>")
+            break;
+            case mark >= 60 && mark <=100 : document.write("<h1 style=' color: red;'> third class </h1>")
+            break; 
+         
+            default:console.log("Not working");
+            document.write("<h1 style=' color: red;'> Wrong input </h1>")
+                break;
+         }
+
+    </script>
+</body>
+
+</html>
