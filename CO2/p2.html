@@ -7,19 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2</title>
 </head>
+<style>
+    .box{ 
 
+       padding: 50px;
+        background: rgb(153, 68, 68);
+        color: aliceblue;
+    }
+    .btn{
+        color: rgb(10, 90, 160);
+        background-color: aqua;
+        border: none;
+        padding: 15px;
+        border-radius: 9px; 
+        
+    }
+    #num2 , #num1{
+         padding: 10px;
+         width: 300px;
+ border: none;
+ border-radius: 4px;
+    }
+</style>
 <body>
 
-    Num1:<input type="text" id="num1">
-    <br><br>
-    Num2:<input type="text" id="num2">
-    <br><br>
-    <button onclick="Add()">ADD</button>
-    <button onclick="sub()">SUB</button>
-    <button onclick="mul()">MULTI</button>
-    <br>
-    
-      <h1> Result: <span id="res" style="color: #000;"> </span></h1> 
+    <div class=" box">
+
+        <label for="#num1"></label><input type="text" id="num1">
+        <br><br>
+        Num2:<input type="text" id="num2">
+        <br><br>
+        <button class="btn"  onclick="Add()">ADD</button>
+        <button class="btn"   onclick="sub()">SUB</button>
+        <button class="btn"  onclick="mul()">MULTI</button>
+        <br>
+        
+          <h1> Result: <span id="res" style="color: #000;"> </span></h1> 
+
+    </div>
+  
   
 
 
