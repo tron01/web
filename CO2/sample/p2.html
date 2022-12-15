@@ -8,10 +8,15 @@
     <title>2</title>
 </head>
 <style>
+body{
+  background: #308bc9  ;
+}
     .box{ 
-
-       padding: 50px;
-        background: rgb(153, 68, 68);
+       width:500px;
+ border-radius: 9px;  
+        margin-top:2%;
+         padding: 70px;
+        background:   #589dcd  ;
         color: aliceblue;
     }
     .btn{
@@ -23,20 +28,29 @@
         
     }
     #num2 , #num1{
-         padding: 10px;
+         padding: 20px;
          width: 300px;
  border: none;
  border-radius: 4px;
     }
+.name{
+ text-transform: uppercase;
+margin-bottom: 2em;
+color: #FFF;
+
+ }
 </style>
 <body>
-
+ <center>
+      
+     
     <div class=" box">
+<h1 class="name" > <b>Calculator</b> </h1>
 
         <label for="#num1">Num1:</label><input type="text" id="num1">
-        <br><br>
+        <br><br><br>
         Num2:<input type="text" id="num2">
-        <br><br>
+        <br><br><br>
         <button class="btn"  onclick="Add()">ADD</button>
         <button class="btn"   onclick="sub()">SUB</button>
         <button class="btn"  onclick="mul()">MULTI</button>
@@ -47,7 +61,7 @@
 
     </div>
   
-  
+  </center>
 
 
 
