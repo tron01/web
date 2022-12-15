@@ -33,13 +33,14 @@
 
     <div class=" box">
 
-        <label for="#num1"></label><input type="text" id="num1">
+        <label for="#num1">Num1</label><input type="text" id="num1">
         <br><br>
         Num2:<input type="text" id="num2">
         <br><br>
         <button class="btn"  onclick="Add()">ADD</button>
         <button class="btn"   onclick="sub()">SUB</button>
         <button class="btn"  onclick="mul()">MULTI</button>
+        <button class="btn"  onclick="Div()">Div</button>
         <br>
         
           <h1> Result: <span id="res" style="color: #000;"> </span></h1> 
@@ -70,6 +71,13 @@
             num1 = parseInt(document.getElementById("num1").value);
             num2 = parseInt(document.getElementById("num2").value);
             res = (num1 * num2);
+            document.getElementById("res").innerHTML = res
+        }
+
+        function Div() {
+            num1 = parseInt(document.getElementById("num1").value);
+            num2 = parseInt(document.getElementById("num2").value);
+            res = (num1 / num2);
             document.getElementById("res").innerHTML = res
         }
 
