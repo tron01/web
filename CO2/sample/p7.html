@@ -19,46 +19,58 @@
                 </tr>
                 <tr>
                     <td> user_id </td>
-                    <td><input type="text" class="" name="user_id" id="user_id"> <span style=" color: red; " id="user_error"> </span> </td>
+                    <td><input type="text" class="" name="user_id" id="user_id"> <span style=" color: red; "
+                            id="user_error"> </span> </td>
                 </tr>
-                <tr><td>Name</td>
-                    <td>  <input type="text" name="name" class="" id="name"> <span style=" color: red; " id="name_error"></span></td>
+                <tr>
+                    <td>Name</td>
+                    <td> <input type="text" name="name" class="" id="name"> <span style=" color: red; "
+                            id="name_error"></span></td>
                 </tr>
-                <tr><td>password</td>
-                    <td>  <input type="password" name="pass" class="" id="pass"> <span style=" color: red; " id="pass_error"></span></td>
+                <tr>
+                    <td>password</td>
+                    <td> <input type="password" name="password" class="" id="pass"> <span style=" color: red; "
+                            id="pass_error"></span></td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td>  <input type="text" class="" name="Address" id="Address"> <span style=" color: red; " id="user_error"></span></td>
+                    <td> <input type="text" class="" name="Address" id="Address"> <span style=" color: red; "
+                            id="Address_error"></span></td>
                 </tr>
                 <tr>
                     <td>Country</td>
-                    <td>  <select name="c" id="Country">
-                            <option name="c"  id="Country" value="India">India</option>
-                            <option  name="c"  id="Country" value="Japan">Japan</option>
-                            <option  name="c"  id=" Country" value="Canada">Canada</option>
+                    <td> <select name="c" id="Country">
+                            <option name="c" id="Country" value="India">India</option>
+                            <option name="c" id="Country" value="Japan">Japan</option>
+                            <option name="c" id=" Country" value="Canada">Canada</option>
                         </select> </td>
                 </tr>
                 <tr>
                     <td>Zip code </td>
-                    <td> <input type="text" class="" id="zip"> </td>
+                    <td> <input type="text" class="" name="zip" id="zip"> <span style=" color: red; "
+                            id="zip_error"></span> </td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>  <input type="email" class=""  name ="email"id="email"> </td>
+                    <td> <input type="email" class="" name="email" id="email"> <span style=" color: red; "
+                            id="email_error"></span></td>
                 </tr>
 
                 <tr>
                     <td>Gender</td>
-                    <td>  <input type="radio" name="gender" class="" value="male" id="male"><label for="male">Male</label> 
-                        <input type="radio" class=""  name="gender" value="Female" id="Female"><label for="Female">Female</label>  </td>
+                    <td> <input type="radio" name="gender" class="" value="male" id="male"><label
+                            for="male">Male</label>
+                        <input type="radio" class="" name="gender" value="Female" id="Female"><label
+                            for="Female">Female</label> <span style=" color: red; " id="email_error"></span>
+                    </td>
                 </tr>
                 <tr>
                     <td> <label for="about"> About</label></td>
-                    <td> <textarea name="" id="about" cols="30" rows="5"></textarea> </td>
+                    <td> <textarea name="about" id="about" cols="30" rows="5"></textarea> <span style=" color: red; "
+                            id="about_error"></span></td>
                 </tr>
                 <tr>
-                   <td> <input type="submit" name="" value="submit" id=""></td>
+                    <td> <input type="submit" name="" value="submit" id=""></td>
                 </tr>
             </form>
 
@@ -68,29 +80,91 @@
     </div>
 
     <script>
-   function validate(){
- console.log("clicked");
-var user_id = document.myForm.user_id.value;
-var name = document.myForm.name.value;
-var email = document.myForm.email.value;
-if (user_id  == ""){
-document.getElementById("user_error").innerHTML="Enter the user id!";
-document.myForm.user_id.focus();
-return false;
-     
-} else if (user_id.length < 5 || user_id.length <12) { 
-    alert("Enter correct length!! ");
-}
-if(name == ""){
-    document.getElementById("name_error").innerHTML="Enter name !";
-document.myForm.name.focus();
-return false;
-}
+        function validate() {
+            console.log("clicked");
+            var user_id = document.myForm.user_id.value;
+            var name = document.myForm.name.value;
+            var email = document.myForm.email.value;
+            var pass = document.myForm.pass.value;
+            var Address = document.myForm.Address.value;
+            var Country = document.myForm.c.value;
+            var zip = document.myForm.zip.value;
+            var about = document.myForm.about.value;
+            var gender = document.myForm.gender.value;
+            document.getElementById("pass_error").innerHTML = " gdj";
+            document.getElementById("user_error").innerHTML = " ";
+            if (user_id == "") {
+                document.getElementById("user_error").innerHTML = "Enter the user id!";
+                document.myForm.user_id.focus();
+                return false;
 
-console.log(user_id);
+            } else if (user_id.length < 3 && user_id.length < 12) {
+                document.getElementById("user_error").innerHTML = "Enter correct length!!";
+                document.myForm.user_id.focus();
+                return false;
+            } else {
+                document.getElementById("user_error").innerHTML = " ";
+            }
+
+            if (name == "") {
+                document.getElementById("name_error").innerHTML = "Enter the name !";
+                document.myForm.name.focus();
+                return false;
+            } else {
+                document.getElementById("name_error").innerHTML = " ";
+            }
+            if (pass = "") {
+                document.getElementById("pass_error").innerHTML = "Enter the password !";
+                document.myForm.password.focus();
+                return false;
+            } else {
+                document.getElementById("pass_error").innerHTML = " ";
+                console.log(pass);
+            }
+            if (Address = "") {
+                document.getElementById("Address_error").innerHTML = "Enter the Address !";
+                document.myForm.Address.focus();
+                return false;
+            } else {
+                document.getElementById("Address_error").innerHTML = " ";
+
+            }
+
+            if (zip = "") {
+                document.getElementById("zip_error").innerHTML = "Enter the zip code !";
+                document.myForm.zip.focus();
+                return false;
+            } else {
+                document.getElementById("zip_error").innerHTML = " ";
+            }
+            if (email = "") {
+                document.getElementById("email_error").innerHTML = "Enter the Email !";
+                document.myForm.email.focus();
+                return false;
+            } else {
+                document.getElementById("email_error").innerHTML = " ";
+            }
+
+            if (gender = "") {
+                document.getElementById("gender_error").innerHTML = "select the gender !";
+                document.myForm.gender.focus();
+                return false;
+            } else {
+                document.getElementById("gender_error").innerHTML = "Enter the Email !";
+            }
+            if (about = "") {
+                document.getElementById("about_error").innerHTML = "Enter the Email !";
+                document.myForm.about.focus();
+                return false;
+            } else {
+                document.getElementById("about_error").innerHTML = " ";
+            }
 
 
-       }    </script>
+
+
+
+        }    </script>
 </body>
 
 </html>
