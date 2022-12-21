@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <form action="" name="myForm" onsubmit="validate()">
+                <tr>
+                    <td>
+                        <h1> Form</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td> user_id </td>
+                    <td><input type="text" class="" name="user_id" id="user_id"> </td>
+                </tr>
+                <tr><td>password</td>
+                    <td>  <input type="password" name="pass" class="" id="pass"> </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>  <input type="text" class="" name="Address" id="Address"> </td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>  <select name="c" id="Country">
+                            <option id="Country" value="India">India</option>
+                            <option id="Country" value="Japan">Japan</option>
+                            <option  id=" Country" value="Canada">Canada</option>
+                        </select> </td>
+                </tr>
+                <tr>
+                    <td>Zip code </td>
+                    <td> <input type="text" class="" id="zip"> </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>  <input type="email" class=""  name ="email"id="email"> </td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>  <input type="radio" name="gender" class="" value="male" id="male"><label for="male">Male</label> 
+                        <input type="radio" class=""  name="gender" value="Female" id="Female"><label for="Female">Female</label>  </td>
+                </tr>
+                <tr>
+                    <td> <label for="about"> About</label></td>
+                    <td> <textarea name="" id="about" cols="30" rows="5"></textarea> </td>
+                </tr>
+                <tr>
+                   <td> <input type="submit" name="" value="submit" id=""></td>
+                </tr>
+            </form>
+
+
+        </table>
+
+    </div>
+
+    <script>
+   function validate(){
+ console.log("clicked");
+
+
+
+       }    </script>
+</body>
+
+</html>
