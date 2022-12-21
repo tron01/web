@@ -11,7 +11,7 @@
 <body>
     <div class="box">
         <table>
-            <form action="" name="myForm" onsubmit="validate()">
+            <form name="myForm" onsubmit="return(validate())">
                 <tr>
                     <td>
                         <h1> Form</h1>
@@ -19,21 +19,24 @@
                 </tr>
                 <tr>
                     <td> user_id </td>
-                    <td><input type="text" class="" name="user_id" id="user_id"> </td>
+                    <td><input type="text" class="" name="user_id" id="user_id"> <span style=" color: red; " id="user_error"> </span> </td>
+                </tr>
+                <tr><td>Name</td>
+                    <td>  <input type="text" name="name" class="" id="name"> <span style=" color: red; " id="name_error"></span></td>
                 </tr>
                 <tr><td>password</td>
-                    <td>  <input type="password" name="pass" class="" id="pass"> </td>
+                    <td>  <input type="password" name="pass" class="" id="pass"> <span style=" color: red; " id="pass_error"></span></td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td>  <input type="text" class="" name="Address" id="Address"> </td>
+                    <td>  <input type="text" class="" name="Address" id="Address"> <span style=" color: red; " id="user_error"></span></td>
                 </tr>
                 <tr>
                     <td>Country</td>
                     <td>  <select name="c" id="Country">
-                            <option id="Country" value="India">India</option>
-                            <option id="Country" value="Japan">Japan</option>
-                            <option  id=" Country" value="Canada">Canada</option>
+                            <option name="c"  id="Country" value="India">India</option>
+                            <option  name="c"  id="Country" value="Japan">Japan</option>
+                            <option  name="c"  id=" Country" value="Canada">Canada</option>
                         </select> </td>
                 </tr>
                 <tr>
@@ -67,7 +70,24 @@
     <script>
    function validate(){
  console.log("clicked");
+var user_id = document.myForm.user_id.value;
+var name = document.myForm.name.value;
+var email = document.myForm.email.value;
+if (user_id  == ""){
+document.getElementById("user_error").innerHTML="Enter the user id!";
+document.myForm.user_id.focus();
+return false;
+     
+} else if (user_id.length < 5 || user_id.length <12) { 
+    alert("Enter correct length!! ");
+}
+if(name == ""){
+    document.getElementById("name_error").innerHTML="Enter name !";
+document.myForm.name.focus();
+return false;
+}
 
+console.log(user_id);
 
 
        }    </script>
