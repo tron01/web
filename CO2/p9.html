@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGING COLORS USING JAVASCRIPT
+    </title>
+</head>
+<style>
+    body {
+        background: rgb(255, 255, 255);
+        margin: 0;
+    }
+
+
+    .box {
+        padding: 50px;
+        margin: 20px;
+        font-size: larger;
+        background: rgb(121, 121, 165);
+        border-radius: 20px;
+    }
+
+    button {
+        background: transparent;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+
+    p {
+
+        font-weight: bolder;
+        padding: 15px 10px;
+    }
+
+    button:hover {
+        background: white;
+    }
+
+    .box1 {
+        padding: 50px;
+        margin: 20px;
+        font-size: larger;
+        background: rgb(121, 121, 165);
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <div class="box1">
+        <h3>Body Color Change Button</h3>
+        <button onclick="red();">red</button>
+        <button onclick="green();">green</button>
+        <button onclick="yellow();">yellow</button>
+        <button onclick="blue();">blue</button>
+    </div>
+
+    <div class="box"><br>
+        <h3>Text Color Change Button</h3>
+        <p id="p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatem velit eveniet porro
+            cumque
+            laboriosam temporibus ipsam vero exercitationem? Fugiat quo accusamus debitis, eius perferendis provident id
+            repellendus exercitationem asperiores?
+        </p>
+        <br>
+        <button onclick="tred();">red</button>
+        <button onclick="tgreen();">green</button>
+        <button onclick="tyellow();">yellow</button>
+        <button onclick="tblue();">blue</button>
+    </div>
+
+
+</body>
+
+<script>
+    function red() {
+        document.body.style.background = "red";
+    }
+    function yellow() {
+        document.body.style.background = "yellow";
+    }
+    function blue() {
+        document.body.style.background = "blue";
+    }
+    function green() {
+        document.body.style.background = "green";
+    }
+
+    function tred() {
+        document.getElementById("p").style.background = "red";
+
+    }
+    function tyellow() {
+        document.getElementById("p").style.background = "yellow";
+    }
+    function tblue() {
+        document.getElementById("p").style.background = "blue";
+    }
+    function tgreen() {
+        document.getElementById("p").style.background = "green";
+    }
+</script>
+
+</html>
