@@ -63,7 +63,7 @@
                     <td>Gender</td>
                     <td> <input type="radio" name="gender" class="" value="male" id="male"><label
                             for="male">Male</label>
-                        <input type="radio" class="" name="gender" value="Female" id="Female"><label
+                        <input type="radio" class="" name="gender" value="Female" id="female"><label
                             for="Female">Female</label> <span style=" color: red; " id="gender_error"></span>
                     </td>
                 </tr>
@@ -95,7 +95,7 @@
             var zip = document.myForm.zip.value;
             var about = document.myForm.about.value;
             // var gender = document.myForm.gender.value;
-
+            var gender = document.getElementsByName("gender");
 
 
             if (user_id == "") {
@@ -155,20 +155,21 @@
                 return false;
             } else {
                 document.getElementById("email_error").innerHTML = " ";
-                document.myForm.gender.focus();
+                document.getElementById("male").focus();
             }
 
-            if (document.myForm.gender[0].checked == false && document.myForm.gender[1].checked == false) {
-                document.getElementById("gender_error").innerHTML = "select the gender !";
-                document.myForm.gender.focus();
-                return false;
-            } else {
+            if ((gender[0].checked == true) || ((gender[1].checked == true))) {
                 document.getElementById("gender_error").innerHTML = " ";
                 document.myForm.about.focus();
+            } else {
+                document.getElementById("gender_error").innerHTML = "select the gender !";
+                document.getElementById("male").focus();
+                return false;
+
 
             }
             if (about == "") {
-                document.getElementById("about_error").innerHTML = "Enter the Email !";
+                document.getElementById("about_error").innerHTML = "Type your Text !";
                 document.myForm.about.focus();
                 return false;
             } else {
