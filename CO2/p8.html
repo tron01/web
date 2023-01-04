@@ -43,9 +43,24 @@
             margin: 0;
         }
 
-        input {
+        input[type=text],
+        input[type=number],
+        input[type=email] {
             padding: 5px 8px;
             border-radius: 10px;
+            width: 50%;
+        }
+
+        textarea {
+            padding: 5px 8px;
+            border-radius: 10px;
+            width: 50%;
+        }
+
+        select {
+            padding: 5px 8px;
+            border-radius: 10px;
+            width: 20%;
         }
 
         h1 {
@@ -66,13 +81,14 @@
                 </tr>
                 <tr>
                     <td> user_id </td>
-                    <td><input type="text" class="" name="user_id"> <span style=" color: red; " id="user_error"> </span>
+                    <td><input type="text" class="" name="user_id" placeholder="user-id here!"> <span
+                            style=" color: red; " id="user_error"> </span>
                     </td>
                 </tr>
                 <tr>
                     <td>Name</td>
-                    <td> <input type="text" name="user_name" class=""> <span style=" color: red; "
-                            id="name_error"></span>
+                    <td> <input type="text" name="user_name" class="" placeholder="username here! number not allowed">
+                        <span style=" color: red; " id="name_error"></span>
                     </td>
                 </tr>
                 <tr>
@@ -96,7 +112,8 @@
                 </tr>
                 <tr>
                     <td>Zip code </td>
-                    <td> <input type="number" class="" name="zip"> <span style=" color: red; " id="zip_error"></span>
+                    <td> <input type="number" class="" name="zip" placeholder="zip code must numbers!"> <span
+                            style=" color: red; " id="zip_error"></span>
                     </td>
                 </tr>
                 <tr>
@@ -152,8 +169,8 @@
                 document.myForm.user_id.focus();
                 return false;
 
-            } else if (user_id.length < 3 && user_id.length < 12) {
-                document.getElementById("user_error").innerHTML = "Enter correct length!!";
+            } else if (user_id.length < 3 || user_id.length > 6) {
+                document.getElementById("user_error").innerHTML = "user id must in between 3-6 length";
                 document.myForm.user_id.focus();
                 return false;
             } else if (!user_id.match(abc)) {
