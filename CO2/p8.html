@@ -8,16 +8,28 @@
     <title>FORM VALIDATION</title>
     <style>
         table{
-            background: white;
+margin-top: 50px;
+            background:rgb(83, 111, 233);
             padding: 40px;
+            color: white;
+            border-radius: 20px;
         }
         #btn{
-            background: transparent;
-            padding: 5px 10px;
+            background: white;
+            padding: 8px 15px;
             border-radius: 10px;
+            color: rgb(3, 1, 1);
         }
+        #btn:hover{
+            background: green;
+        }
+
         body{
-            background:rgb(247, 128, 128);}
+            margin: 0;
+            display: flex;
+            justify-content: center;
+align-items: center;
+            background:rgb(221, 80, 80);}
             
     </style>
 </head>
@@ -111,8 +123,8 @@
             // var gender = document.myForm.gender.value;
             var gender = document.getElementsByName("gender");
 
-            var abc="/[a-z]/g";
-            var num="/[^0-9]/g";
+            var abc=/[a-z]/g;
+            var num=/[0-9]/g;
              
             if (user_id == "") {
                 document.getElementById("user_error").innerHTML = "Enter the user id!";
@@ -123,7 +135,7 @@
                 document.getElementById("user_error").innerHTML = "Enter correct length!!";
                 document.myForm.user_id.focus();
                 return false;
-            } else if(user_id.match(abc)){
+            } else if(!user_id.match(abc)){
                 document.getElementById("user_error").innerHTML = "user_id Not start with number";
                 document.myForm.user_id.focus();
                 return false;
