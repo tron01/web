@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM VALIDATION</title>
     <style>
+        table{
+            background: white;
+            padding: 40px;
+        }
         #btn{
             background: transparent;
             padding: 5px 10px;
             border-radius: 10px;
-            border-color: rgb(173, 162, 162);
         }
+        body{
+            background:rgb(247, 128, 128);}
+            
     </style>
 </head>
 
@@ -105,8 +111,8 @@
             // var gender = document.myForm.gender.value;
             var gender = document.getElementsByName("gender");
 
-            var u_Reg="/[a-z]/g";
-            var un_Reg="/[0-9]/g";
+            var abc="/[a-z]/g";
+            var num="/[^0-9]/g";
              
             if (user_id == "") {
                 document.getElementById("user_error").innerHTML = "Enter the user id!";
@@ -117,7 +123,7 @@
                 document.getElementById("user_error").innerHTML = "Enter correct length!!";
                 document.myForm.user_id.focus();
                 return false;
-            } else if(user_id.match(u_Reg)){
+            } else if(user_id.match(abc)){
                 document.getElementById("user_error").innerHTML = "user_id Not start with number";
                 document.myForm.user_id.focus();
                 return false;
@@ -137,7 +143,7 @@
                 document.getElementById("name_error").innerHTML = "Enter correct length!! ";
                 document.myForm.user_name.focus();
                 return false;
-            }else if(!user_name.match(un_Reg)){
+            }else if(user_name.match(num)){
                 document.getElementById("name_error").innerHTML = "Numbers not allowed! ";
                 document.myForm.user_name.focus();
                 return false;
