@@ -6,6 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM VALIDATION</title>
+    <style>
+        #btn{
+            background: transparent;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border-color: rgb(173, 162, 162);
+        }
+    </style>
 </head>
 
 <body>
@@ -73,7 +81,7 @@
                             id="about_error"></span></td>
                 </tr>
                 <tr>
-                    <td> <input type="submit" value="submit"></td>
+                    <td> <input type="submit" id="btn" value="submit"></td>
                 </tr>
 
 
@@ -97,7 +105,9 @@
             // var gender = document.myForm.gender.value;
             var gender = document.getElementsByName("gender");
 
-
+            var u_Reg="/[a-z]/g";
+            var un_Reg="/[0-9]/g";
+             
             if (user_id == "") {
                 document.getElementById("user_error").innerHTML = "Enter the user id!";
                 document.myForm.user_id.focus();
@@ -107,20 +117,33 @@
                 document.getElementById("user_error").innerHTML = "Enter correct length!!";
                 document.myForm.user_id.focus();
                 return false;
-            } else {
-                document.getElementById("user_error").innerHTML = " ";
-                document.myForm.user_name.focus();
+            } else if(user_id.match(u_Reg)){
+                document.getElementById("user_error").innerHTML = "user_id Not start with number";
+                document.myForm.user_id.focus();
+                return false;
 
+            }else{
+
+                document.getElementById("user_error").innerHTML = " ";
+               // document.myForm.user_name.focus();
             }
 
             if (user_name == "") {
                 document.getElementById("name_error").innerHTML = "Enter the name !";
                 document.myForm.user_name.focus();
                 return false;
-            } else {
+            } else if(user_name.length < 3 && user_name.length < 12)
+             {
+                document.getElementById("name_error").innerHTML = "Enter correct length!! ";
+                document.myForm.user_name.focus();
+                return false;
+            }else if(!user_name.match(un_Reg)){
+                document.getElementById("name_error").innerHTML = "Numbers not allowed! ";
+                document.myForm.user_name.focus();
+                return false;
+            }else{
                 document.getElementById("name_error").innerHTML = " ";
-                document.myForm.p.focus();
-
+                //document.myForm.p.focus();
             }
 
             if (pass == "") {
@@ -138,7 +161,7 @@
                 return false;
             } else {
                 document.getElementById("Address_error").innerHTML = " ";
-                document.myForm.zip.focus();
+               // document.myForm.zip.focus();
             }
 
             if (zip == "") {
@@ -155,7 +178,7 @@
                 return false;
             } else {
                 document.getElementById("email_error").innerHTML = " ";
-                document.getElementById("male").focus();
+              //  document.getElementById("male").focus();
             }
 
             if ((gender[0].checked == true) || ((gender[1].checked == true))) {
