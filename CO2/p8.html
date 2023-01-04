@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM VALIDATION</title>
     <style>
-        table{
-margin-top: 50px;
-            background:rgb(83, 111, 233);
+        table {
+            margin-top: 50px;
+            background: rgb(83, 111, 233);
             padding: 40px;
             color: white;
             border-radius: 20px;
         }
-        #btn{
+
+        #btn {
             background: white;
             padding: 9px 20px;
             margin: 10px;
@@ -22,17 +23,18 @@ margin-top: 50px;
             color: rgb(3, 1, 1);
             border: none;
         }
-        #btn:hover{
+
+        #btn:hover {
             background: green;
         }
 
-        body{
+        body {
             margin: 0;
             display: flex;
             justify-content: center;
-align-items: center;
-            background:rgb(221, 80, 80);}
-            
+            align-items: center;
+            background: rgb(221, 80, 80);
+        }
     </style>
 </head>
 
@@ -78,7 +80,7 @@ align-items: center;
                 </tr>
                 <tr>
                     <td>Zip code </td>
-                    <td> <input type="text" class="" name="zip"> <span style=" color: red; " id="zip_error"></span>
+                    <td> <input type="number" class="" name="zip"> <span style=" color: red; " id="zip_error"></span>
                     </td>
                 </tr>
                 <tr>
@@ -125,9 +127,10 @@ align-items: center;
             // var gender = document.myForm.gender.value;
             var gender = document.getElementsByName("gender");
 
-            var abc=/[a-z]/g;
-            var num=/[0-9]/g;
-             
+            var abc = /[a-z]+/gi;
+            var num = /[0-9]+/g;
+            var zip_M = /[0-9]{6}/
+
             if (user_id == "") {
                 document.getElementById("user_error").innerHTML = "Enter the user id!";
                 document.myForm.user_id.focus();
@@ -137,31 +140,30 @@ align-items: center;
                 document.getElementById("user_error").innerHTML = "Enter correct length!!";
                 document.myForm.user_id.focus();
                 return false;
-            } else if(!user_id.match(abc)){
+            } else if (!user_id.match(abc)) {
                 document.getElementById("user_error").innerHTML = "user_id Not start with number";
                 document.myForm.user_id.focus();
                 return false;
 
-            }else{
+            } else {
 
                 document.getElementById("user_error").innerHTML = " ";
-               // document.myForm.user_name.focus();
+                // document.myForm.user_name.focus();
             }
 
             if (user_name == "") {
                 document.getElementById("name_error").innerHTML = "Enter the name !";
                 document.myForm.user_name.focus();
                 return false;
-            } else if(user_name.length < 3 && user_name.length < 12)
-             {
+            } else if (user_name.length < 3 && user_name.length < 12) {
                 document.getElementById("name_error").innerHTML = "Enter correct length!! ";
                 document.myForm.user_name.focus();
                 return false;
-            }else if(user_name.match(num)){
+            } else if (user_name.match(num)) {
                 document.getElementById("name_error").innerHTML = "Numbers not allowed! ";
                 document.myForm.user_name.focus();
                 return false;
-            }else{
+            } else {
                 document.getElementById("name_error").innerHTML = " ";
                 //document.myForm.p.focus();
             }
@@ -181,11 +183,15 @@ align-items: center;
                 return false;
             } else {
                 document.getElementById("Address_error").innerHTML = " ";
-               // document.myForm.zip.focus();
+                // document.myForm.zip.focus();
             }
 
             if (zip == "") {
                 document.getElementById("zip_error").innerHTML = "Enter the zip code !";
+                document.myForm.zip.focus();
+                return false;
+            } else if (!zip.match(zip_M)) {
+                document.getElementById("zip_error").innerHTML = " zip code  length must be 6!";
                 document.myForm.zip.focus();
                 return false;
             } else {
@@ -198,7 +204,7 @@ align-items: center;
                 return false;
             } else {
                 document.getElementById("email_error").innerHTML = " ";
-              //  document.getElementById("male").focus();
+                //  document.getElementById("male").focus();
             }
 
             if ((gender[0].checked == true) || ((gender[1].checked == true))) {
