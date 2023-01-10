@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
                     <td>Zip code </td>
-                    <td> <input type="number" class="" name="zip" placeholder="zip code must numbers!">
+                    <td> <input type="number" maxlength="6" class="" name="zip" placeholder="zip code must numbers!">
                         <span style=" color: red; " id="zip_error"></span>
                     </td>
                 </tr>
@@ -228,7 +228,7 @@
                 document.getElementById("zip_error").innerHTML = "Enter the zip code !";
                 document.myForm.zip.focus();
                 return false;
-            } else if (!zip.match(zip_M)) {
+            } else if (zip.length != 6) {
                 document.getElementById("zip_error").innerHTML = " zip code  length must be 6!";
                 document.myForm.zip.focus();
                 return false;
