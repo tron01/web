@@ -44,6 +44,7 @@
         }
 
         input[type=text],
+        input[type=password],
         input[type=number],
         input[type=email] {
             padding: 5px 8px;
@@ -93,7 +94,7 @@
                 </tr>
                 <tr>
                     <td>password</td>
-                    <td> <input type="text" name="p" id="pass" class=""> <span style=" color: red; "
+                    <td> <input type="password" name="p" id="pass" class=""> <span style=" color: red; "
                             id="pass_error"></span>
                     </td>
                 </tr>
@@ -112,8 +113,8 @@
                 </tr>
                 <tr>
                     <td>Zip code </td>
-                    <td> <input type="number" class="" name="zip" placeholder="zip code must numbers!"> <span
-                            style=" color: red; " id="zip_error"></span>
+                    <td> <input type="number" class="" name="zip" placeholder="zip code must numbers!">
+                        <span style=" color: red; " id="zip_error"></span>
                     </td>
                 </tr>
                 <tr>
@@ -162,7 +163,7 @@
 
             var abc = /[a-z]+/gi;
             var num = /[0-9]+/g;
-            var zip_M = /[0-9]{6}/
+            var zip_M = /[0-9]{6}/;
 
             if (user_id == "") {
                 document.getElementById("user_error").innerHTML = "Enter the user id!";
@@ -203,6 +204,10 @@
 
             if (pass == "") {
                 document.getElementById("pass_error").innerHTML = "Enter the password !";
+                document.myForm.p.focus();
+                return false;
+            } else if (pass.length < 4 && pass.length < 6) {
+                document.getElementById("pass_error").innerHTML = "password length must be 4 !";
                 document.myForm.p.focus();
                 return false;
             } else {
