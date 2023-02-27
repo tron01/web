@@ -106,10 +106,13 @@
                 <tr>
                     <td>Country</td>
                     <td> <select name="c" id="Country">
+                            <option name="c" value="">Choose an option</option>
                             <option name="c" id="Country" value="India">India</option>
                             <option name="c" id="Country" value="Japan">Japan</option>
                             <option name="c" id=" Country" value="Canada">Canada</option>
-                        </select> </td>
+                        </select>
+                        <span style=" color: red; " id="c_error"></span>
+                    </td>
                 </tr>
                 <tr>
                     <td>Zip code </td>
@@ -119,7 +122,7 @@
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td> <input type="email" class="" name="email"> <span style=" color: red; " id="email_error"></span>
+                    <td> <input type="text" class="" name="email"> <span style=" color: red; " id="email_error"></span>
                     </td>
                 </tr>
 
@@ -164,6 +167,8 @@
             var abc = /[a-z]+/gi;
             var num = /[0-9]+/g;
             var zip_M = /[0-9]{6}/;
+            var e_pattern = /[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{3,3}$/
+
 
             if (user_id == "") {
                 document.getElementById("user_error").innerHTML = "Enter the user id!";
@@ -223,6 +228,14 @@
                 document.getElementById("Address_error").innerHTML = " ";
                 // document.myForm.zip.focus();
             }
+            if (Country == "") {
+                document.getElementById("c_error").innerHTML = "Select the Country !";
+                return false;
+                // value is set to a valid option, so submit form
+
+            } else {
+                document.getElementById("c_error").innerHTML = "";
+            }
 
             if (zip == "") {
                 document.getElementById("zip_error").innerHTML = "Enter the zip code !";
@@ -240,9 +253,12 @@
                 document.getElementById("email_error").innerHTML = "Enter the Email !";
                 document.myForm.email.focus();
                 return false;
+            } else if (!email.match(e_pattern)) {
+                document.getElementById("email_error").innerHTML = "please enter a valid email id ";
+                document.myForm.email.focus();
+                return false;
             } else {
                 document.getElementById("email_error").innerHTML = " ";
-                //  document.getElementById("male").focus();
             }
 
             if ((gender[0].checked == true) || ((gender[1].checked == true))) {
